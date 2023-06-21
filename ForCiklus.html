@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For цуклуси</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-1.8.2.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="forAgain.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <script>
+        $(document).ready(function (){
+            $("#accordion").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content",
+                disabled: true
+            });
+            $("#accordion h3.accordion-header").click(function () {
+                $(this).next().slideToggle();
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div id="main">
+    <header>
+        <a href="index.html"><img class="next-button" src="img/sledno.png" alt="Next"></a>
+    </header>
+    <div id="title">Фор циклуси во Пајтон</div>
+<br>
+    <div id="accordion">
+        <h3 class="accordion-header">Вовед во for циклусите</h3>
+        <div class="section">
+            <div class="timeline">
+                <div class="outer">
+                    <div class="card">
+                        <div class="info">
+                            Во светот на програмирањето, for циклусот е како збир од повеќе инструкции или наредби кои компјутерот треба да ги извршува повеќе пати. <br>Тоа е исто како да имате асистент кои прави одредена задача одново и одново, без да се заморува.
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            -&nbsp;Зборчето 'for' е специјален збор  со кој мора да започне овој циклус. Овој збор му кажува на компјутерот дека сакаме да правиме нешто постојано, неколку пати. <br> <br>
+                            -&nbsp;'item' е привремена променлива која живее само во овој for циклус. Оваа променлива ја претставува секоја ставка или елемент од списокот 'list_of_things'. Можеме да ја замислиме како некое место кое ја зема вредноста на секој елемент, еден по еден.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            Ова е основната структура за for  циклус и сега ќе објасниме секое зборче што значи:
+                            <br><br>
+                           <pre class="important3">
+                               <code>
+for item in list_of_things:
+       #Do something with the item
+                               </code>
+                           </pre>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            - &nbsp;list_of_things, Oва е збир од променливи или опсег на вредности. Тоа може да биде листа, стринг, tuple или пак некој опсег на броеви. For циклусот ќе помине низ секој елемент во оваа секвенца и ќе ги изврши инструкциите кои ќе ги напишеме во циклусот внатре. <br>
+                            <br>
+                            - &nbsp;: Oвие две точи се задолжителни на крајот од линијата и му кажуваат на компјутерот дека после нив ќе му дадеме збир на инструкции за тоа што да прави внатре во циклусот. <br> <br>
+                            - &nbsp;# Do something with the item, Oваа линија е вовлечена за да се покаже дека е дел од овој циклус. Вовлекувањето е како посебна зона каде што се случува магијата. Компјутерот знае дека се што е вовлечено, се интрукциите што треба да ги прави за секој елемент.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            Полесно ќе го објаснеме ова со пример: <br>
+                            <pre>
+                                    <code>
+fruits = ['apples', 'bananas', 'oranges']
+for fruit in fruits:
+    print(fruit)
+                                    </code>
+                                </pre>
+                            Овде имаме листа од твоите омилени овошки: јаболка, банани и потрокали. <br>Доколку сакаме да ги испечатиме сите овошки на екран, наместо да пишуваме код за секоја посебно, може да напишеме еден фор циклус кој ке изгледа вака.<br>
+                            Откако ќе го извршиме овој код, на екран ќе се испечати:
+                            <pre>
+                                    <code>
+apples
+bananas
+oranges
+                                    </code>
+                                </pre>
+                            По извршивањето на овој код, пајтон ќе го земе првиот елемент од листата fruits, тоа е  'apples' и ќе испечати apples на екран. Потоа ќе се помести на следниот елемент, тоа е 'bananas' и ќе го испечати. Ова ќе продолжи вака се додека не ги помине сите елементи од оваа листа.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <div class="important3">
+                                Можете да користете for циклус за многу работи, како броење броеви, цртање на форми или дури и решавање на загатки. Ова е една многу корисна алатка која ни помага да ги автоматизираме задачите и ни заштедува многу време.
+                                <br>For циклусот е исто како да вадиме по една играчка од некоја кутија и да правиме нешто со неа.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <h3 class="accordion-header">Функцијата range()</h3>
+        <div class="section">
+            <div class="timeline">
+                <div class="outer">
+                    <div class="card">
+                        <div class="info">
+                            Оваа range функција е многу користена и битна кога станува збор за for циклуси. <br>
+                            Синтакса:
+                            <div style="font-weight: bold">&nbsp;range(start, stop, step)</div> <br>
+                        </div>
+                    </div>
+                    <div class="card">
+                    <div class="info">
+                        Ајде преку пример да објасниме за што станува збор.
+                        <pre>
+                    <code>
+for number in range(1, 6):
+    print(number)
+                    </code>
+                             </pre>
+                        Кога ќе се изврши овој код, опсегот (1,6) генерира низа од броеви: 1, 2, 3, 4 и 5. <strong>Без 6!</strong>  For циклусот го зема секој од броевите и го печати на екран. Па ќе се испечати:
+                        <pre>
+                    <code>
+1
+2
+3
+4
+5
+                    </code>
+                </pre>
+                    </div>
+                </div>
+                    <div class="card">
+                        <div class="info">
+                            <table id="table">
+                                <tbody><tr>
+                                    <th style="width:20%">Параметар</th>
+                                    <th>Опис</th>  </tr>
+                                <tr>
+                                    <td><em>start</em></td>
+                                    <td>Опционално. Цел број кој одредува од која позиција да се започне
+                                        По Default е 0</td>
+                                </tr>
+                                <tr>
+                                    <td><em>stop</em></td>
+                                    <td>Задолжително. Цел број кој одредува на која позиција да застане</td>
+                                </tr>
+                                <tr>
+                                    <td><em>step</em></td>
+                                    <td>Опционално. Цел број кој го одредува зголемувањето. По Default е 1</td>
+                                </tr>
+                                </tbody></table>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <div class="important3">Можете да ја прилагодете функцијата range() за свои сопствени потреби. </div>
+                            Пример, може да имаме нешто вакво: 'range(0, 10, 2)' <br>
+                            Овде почуваме од 0, се движиме до 10, но одиме преку два броеви, односно +2. <br>
+                            0, 2, 4, 6, 8<br>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <img src="images/range.png" alt="picture" style="margin: 10px; height: 370px">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <div class="important3">Битно е да се забележи дека 'range(6)' не се броеви од 0 до 6, туку се броеви од 0 до 5.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="accordion-header">Break</h3>
+        <div class="section">
+            <div class="timeline">
+                <div class="outer">
+                    <div class="card">
+                        <div class="info">
+                            <p>
+                                Сега ќе зборуваме за нешто што се нарекува 'break' кај овие for циклуси. <br>
+                                Тоа е специјална команда што ни помага да застанеме во for цуклусот кога сакаме ние. Да не оди тој циклус до крај.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <h3 class="title1"></h3>
+                            Можеби полесно ќе ти биде да го научиш ова ако го замислиш вака!<br>
+                            Замисли дека играш некоја игра и треба да најдеш некое скриено богатство во лавиринт.
+                            Ти одиш низ тој лавиринт и проверуваш во секоја соба. <br>Кога конечно ќе го најдеш богатството во некоја соба, нема потреба да одиш низ останатите соби во лавиринтот, бидејќи веќе го најде тоа што го бараше и прекинуваш. <br>
+                            Епа 'break' ни го овозможува токму тоа. <br> <br> <br>
+                            <div class="important3">Ни дозволува да прекинеме со јамката или циклусот кога ќе најдеме нешто што сме го барале, или пак поради било која друга причина сакаме да прекинеме.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <h3 class="title1"></h3>
+                            Ајде сега да разгледаме еден пример.
+                            <pre>
+                                    <code>
+fruits = ['apple', 'banana', 'orange', 'kiwi', 'melon']
+
+for fruit in fruits:
+    if fruit == 'orange':
+        print('I found the orange! Stopping the loop...')
+        break
+    print(fruit)
+
+print('Loop finished!')
+                                    </code>
+                                </pre>
+                            Како што можеме да видиме од примерот, for циклусот ќе прекине по наоѓањето на 'orange', бидејќи таму имаме употребено break. <br>
+                            На излез ќе имаме:
+                            <pre>
+                                    <code>
+apple
+banana
+I found the orange! Stopping the loop...
+Loop finished!
+                                    </code>
+                                </pre>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <h3 class="title1"></h3>
+                            Овој код може да го пробате со кликање на следното копче.
+                            <form action="https://www.jdoodle.com/api/redirect-to-post/python3-programming-online" method="post" target="_blank">
+                        <textarea class="textArea" name="initScript" rows="8" cols="80">
+fruits = ['apple', 'banana', 'orange', 'kiwi', 'melon']
+
+for fruit in fruits:
+    if fruit == 'orange':
+        print('I found the orange! Stopping the loop...')
+        break
+    print(fruit)
+
+print('Loop finished!')
+                        </textarea>
+                                <br>
+                                <input class="button" type="submit" value="Try Now" style="margin-left: 50px">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <div class="important3">
+                                Break наредбата ни помага да избегнеме непотребни повторувања и заштедува време.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="accordion-header">Continue</h3>
+        <div class="section">
+            <div class="timeline">
+                <div class="outer">
+                    <div class="card">
+                        <div class="info">
+                            <p>
+                                Има уште една специјална команда кај for циклусите која ни помага да го контролираме текот на циклусот, а тоа е 'continue'. <br>
+                                Оваа continue команда ни дозволува да прескокнеме специфична интеракција од for циклусот и да продолжиме со следната.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <p>
+                                Можеби полено ќе биде да го објасниме ова вака:<br>
+                                Замисли дека си во некој парк каде има многу дрва. <br>
+                                Ти сакаш да ги изброиш овие дрва, но има едно многу големо и старо дрво и тоа дрво сакаш да го прескокнеш, да не го броиш, бидејќи многу се разликува од другите дрва. <br>
+                                Па кога со броењето ќе стигнеш до ова дрво, само едноставно ќе го прескокнеш и ќе продолжиш од следното дрво. <br>
+                                Токму ова ни го дозволува оваа наредба continue.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <p>
+                                Ајде да го погледнеме ова и со пример
+                            <pre>
+                                        <code>
+fruits = ['apple', 'banana', 'orange', 'kiwi', 'melon']
+
+for fruit in fruits:
+    if fruit == 'orange':
+        print('Skipping the orange...')
+        continue
+    print(fruit)
+print('Loop finished!')
+                                        </code>
+                                   </pre>
+                            Овде со for циклусот се движиме низ листата со овошки и кога ќе дојдеме до портокалот, ќе го прескокнеме и ке продолжиме натаму. <br>
+                            Па така orange нема да се испечати.<br>
+                            На екран ќе се испечати:
+                            <pre>
+                                    <code>
+apple
+banana
+Skipping the orange...
+kiwi
+melon
+Loop finished!
+                                    </code>
+                                </pre>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <p class="important3">
+                                Специјаната команда continue ни помага да прескокнеме некои инерации доколку е потребно и да продолжиме понатаму со циклусот.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            Има уште една наредба кај for циклусите, која се нарекува pass.<br>
+                            Кога ја употребуваме оваа наредба, буквално ништо не се случува. Овде имаме празен for циклус, без содржина во него. <br>
+                            Во него ќе ја ставиме оваа pass наредба, за да не добиваме ерори.
+                            <pre>
+                                    <code>
+for x in [0, 1, 2]:
+    pass
+                                    </code>
+                                </pre>
+                            Еве еден пример. При извршувањето на овој пример, нема да се испечати ништо.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="accordion-header">Else во for циклус</h3>
+        <div class="section">
+            <div class="timeline">
+                <div class="outer">
+                    <div class="card">
+                        <div class="info">
+                            <p>
+                                Иако ова звучи исто како else делот кај if-else условот, ова не врши иста функција.<br>
+                                Else кај for циклусот ни овозможува да направиме нешто по целосното завршување на for циклусот.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            Ајде да го разгледаме ова со пример.<br>
+                            <pre>
+                                <code>
+fruits = ['apple', 'banana', 'orange', 'kiwi', 'melon']
+
+for fruit in fruits:
+    if fruit == 'grape':
+        print('I found the grape!')
+        break
+    print(fruit)
+else:
+    print('I searched everywhere, but couldn\'t find the grape.')
+                                </code>
+                                    </pre>
+                            Во овој пример сакаме да провериме дали во листата со овошки го имаме грозјето. <br>
+                            Ја изминуваме целата листа со for циклус и по неговото завршување, бидејќи го нема грозјето во листата, ќе се премине во else делот и ќе се испечати пораката.<br>
+                            На излез ќе имаме:
+                            <pre>
+                                    <code>
+На излез ќе имаме:
+apple
+banana
+orange
+kiwi
+melon
+I searched everywhere, but couldn't find the grape.
+                                    </code>
+                                </pre>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            Кодот од претходниот пример можете да го пробате со кликање на следното копче. <br> <br>
+                            <div class="tryNow">
+                                <form action="https://www.jdoodle.com/api/redirect-to-post/python3-programming-online" method="post" target="_blank">
+                        <textarea class="textArea" name="initScript" rows="8" cols="80">
+fruits = ['apple', 'banana', 'orange', 'kiwi', 'melon']
+
+for fruit in fruits:
+    if fruit == 'grape':
+        print('I found the grape!')
+        break
+    print(fruit)
+else:
+    print('I searched everywhere, but couldn\'t find the grape.')
+                        </textarea>
+                                    <br>
+                                    <button class="button">Try Now</button>
+
+                                </form>
+                            </div>
+                            <br>
+                            Доколку грозјто го имаше во нашата листа со овошки, условот  'if fruit == 'grape'' ќе беше точен, ќе се испечатење порака дека сме го нашле грозјето и со наредбата break ќе излеземе од for циклусот.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <p>
+                                Сега овде битно е да научиме дека кога имаме break наредба во for циклусот и кога таа ќе се изврши и ќе заврши циклусот, нема да се влезе во делот else. <br>
+                                Бидејќи на овој начин присилно го стопираме циклусот, не поминува тој до крај за сите елементи од листата.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <div class="important3">
+                                На кракто кажано, else делот кај for циклусот е исто како да кажеме "Побарав секаде, но не можев да го најдам она што го барав"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="accordion-header">Вгнездени циклуси</h3>
+        <div class="section">
+            <div class="timeline">
+                <div class="outer">
+                    <div class="card">
+                        <div class="info">
+                            Последното битно нешто кое треба да го кажеме за for циклусите се вгнездените циклуси, односно еден for циклус во друг for циклус.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            Ова најлесно ќе го објаснеме преку еден пример од секојдневниот живот. <br>
+                            Замисли дека имаш една голема кутија со различни боици внатре и сакаш да обоиш еден цртеж користејќи ги овие боици. Се разбира дека ќе коритиш повеќе бои и со секоја боја ќе повлекуваш повеке линии, за да го направиш цртежот шарен и убав.
+                            Па прво ќе земеш црвена боја, со неа ќе повлечеш неколку линии. Потоа ќе земеш зелена со која што исто ќе повлечеш неколку линии, потоа следи плавата, па розевата и се така додека не завршиш.
+                            <div class="important3">Токму ова го прават овие вгнездени циклуси. Тие дозволуваат да имеме еден for циклус во друг и на тој начин можеме да извршуваме задачи кои се повторуваат. </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            Еве го примерот и со код:
+                            <pre>
+                                    <code>
+colors = ['red', 'green', 'blue']
+lines = 3
+
+for color in colors:
+    print(f'Drawing with {color} color:')
+    for line in range(lines):
+        print(f'{line+1}. Drawing a line')
+    print('Finished drawing')
+
+print('Drawing finished!')
+                                    </code>
+                                </pre>
+                            Имаме променлива lines на која и даваме вредност 3 и таа означува колку линии ќе имаме од секоја боја. Во случајов три линии.
+                            Најпрвин имаме for циклус кој ќе ги изминува боите. Ќе започне со црвената. Во овој циклус имаме друг for циклус кој е за линиите од секоја боја. Кога ќе влезе во овој втор циклус додека не ги помине сите три линии нема да излезе од него. Овде три пати ќе се изпечати 'Drawing a line'. Потоа ќе продолжи со следната боја и така се до крај.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            Кога ќе го извршиме овој код, ќе имаме:
+                            <pre>
+                                    <code>
+Drawing with red color:
+1. Drawing a line
+2. Drawing a line
+3. Drawing a line
+Finished drawing
+Drawing with green color:
+1. Drawing a line
+2. Drawing a line
+3. Drawing a line
+Finished drawing
+Drawing with blue color:
+1. Drawing a line
+2. Drawing a line
+3. Drawing a line
+Finished drawing
+Drawing finished!
+                                    </code>
+                                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="accordion-header">Примери за for циклус</h3>
+        <div class="section">
+            <div class="timeline">
+                <div class="outer">
+                    <div class="card">
+                        <div class="info">
+                            <div>Сега ќе разгледаме уште неколку примери, со различни функционалности поврзани со for циклосот</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            Задача 1. Да се напише програма каде ќе се испечатат сите парни броеви од 1 до 20, притоа ќе се прескокнат сите броеви кои се деливи во 3.
+                            <pre>
+                            <code>
+for num in range(1, 21):
+# Check if the number is a multiple of 3
+if num % 3 == 0:
+    print(f"Skipping {num} as it is a multiple of 3.")
+    continue
+
+# Check if the number is even
+if num % 2 == 0:
+   print(f"Found an even number: {num}")
+else:
+   print(f"Found an odd number: {num}")
+
+print("Task completed!")
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="info">
+                            <div class="important4">
+                                На излез ќе имаме:
+                                <pre>
+                            <code>
+Found an odd number: 1
+Task completed!
+Found an even number: 2
+Task completed!
+Skipping 3 as it is a multiple of 3.
+Found an even number: 4
+Task completed!
+Found an odd number: 5
+Task completed!
+Skipping 6 as it is a multiple of 3.
+Found an odd number: 7
+Task completed!
+Found an even number: 8
+Task completed!
+Skipping 9 as it is a multiple of 3.
+Found an even number: 10
+Task completed!
+Found an odd number: 11
+Task completed!
+Skipping 12 as it is a multiple of 3.
+Found an odd number: 13
+Task completed!
+Found an even number: 14
+Task completed!
+Skipping 15 as it is a multiple of 3.
+Found an even number: 16
+Task completed!
+Found an odd number: 17
+Task completed!
+Skipping 18 as it is a multiple of 3.
+Found an odd number: 19
+Task completed!
+Found an even number: 20
+Task completed!
+                            </code>
+                        </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="info">
+                            Задача 2. Создадете правоаголен тријаголник со помош на '*' и со помош на вгнездени циклуси, кој ќе има 5 реда.
+                            <pre>
+                            <code>
+# Outer loop for rows
+for row in range(1, 6):
+# Inner loop for columns
+for col in range(1, row + 1):
+    print("*", end=" ")
+print()
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="info">
+                            <div class="important4">
+                            На излез ќе имаме:
+                            <pre>
+                            <code>
+*
+* *
+* * *
+* * * *
+* * * * *
+                            </code>
+                        </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <h3 class="accordion-header">Реши сам</h3>
+        <div class="section">
+            <div class="important3">Задача 1. Пополни ги празните места, со цел правилно функционирање на for циклусот</div>
+            <div>Избери четири од следните бои, со селектирање на празното квадратче пред секоја боја што ја сакаш!</div>
+            <input type="checkbox" name="color" value="red">Red<br>
+            <input type="checkbox" name="color" value="blue">Blue<br>
+            <input type="checkbox" name="color" value="green">Green<br>
+            <input type="checkbox" name="color" value="yellow">Yellow<br>
+            <input type="checkbox" name="color" value="orange">Orange<br>
+            <input type="checkbox" name="color" value="purple">Purple<br>
+            <input type="checkbox" name="color" value="pink">Pink<br>
+
+            <br>
+            <input type="button" value="Избери" onclick="getSelectedColors()" class="button">
+            <br><br>
+            <div id="selectedColors"></div>
+            <div>
+                <input type="text" style="display: inline; width: 50px" id="for"> x <input type="text" style="display: inline; width: 50px" id="in"> candies: <br>
+                &nbsp;&nbsp;print(x)
+            </div>
+            <div id="messageFor"></div>
+            <div id="messageIn"></div>
+
+            <br>
+            <div class="important3">Задача 2. Напиши ја range функцијата за циклусот да оди 6 пати.</div>
+            for x in (<input type="text" style="display: inline; width: 130px" id="range">): <br>
+            &nbsp;&nbsp;print(x)
+            <div id="messageRange"></div>
+
+            <br>
+            <div class="important3">Задача 3. Дополни на празните места, за кога ќе стигне циклусот до елементот "banana", тој присилно да заврши. </div>
+            for x in fruits:<br>
+            &nbsp;&nbsp;if x == "banana":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="break" style="display: inline; width: 100px"><br>
+            &nbsp;&nbsp;print(x)
+            <div id="messageBreak"></div>
+        </div>
+
+
+
+
+    </div>
+</div>
+<script src="ForLoopJS.js"></script>
+</body>
+</html>

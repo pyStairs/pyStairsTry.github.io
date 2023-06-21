@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PyStairs</title>
+    <link rel="stylesheet" href="FirstPageCSS.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+</head>
+<body>
+<div id="two">
+    <a href="voved.html" class="neon">Вовед</a>
+</div>
+<div class="stairs">
+    <div class="base"></div>
+    <div id="variables" class="step" style="--j:1">
+        <i></i>
+        <i></i>
+        <span>Променливи</span>
+    </div>
+    <div id="printID" class="step" style="--j:2">
+        <i></i>
+        <i></i>
+        <span>Печатење</span>
+    </div>
+    <div id="listsID" class="step" style="--j:3">
+        <i></i>
+        <i></i>
+        <span>Листи</span>
+    </div>
+    <div id="tuplesID" class="step" style="--j:4">
+        <i></i>
+        <i></i>
+        <span>Tuples</span>
+    </div>
+    <div id="ifElseID" class="step" style="--j:5">
+        <i></i>
+        <i></i>
+        <span>If/Else</span>
+    </div>
+    <div id="forLoop" class="step" style="--j:6">
+        <i></i>
+        <i></i>
+        <span>For </span>
+    </div>
+    <div id="functionsID" class="step" style="--j:7">
+        <i></i>
+        <i></i>
+        <span>Функции</span>
+
+    </div>
+</div>
+<div id="one">
+    <a href="finalPage.html" class="neon">Final</a>
+</div>
+
+<script>
+    let steps = document.querySelectorAll('.step');
+
+   /* steps.forEach(function(step, index) {
+        step.addEventListener('click', function() {
+            window.location.href = 'Variables.html';
+        });
+    });*/
+
+    let variables = document.getElementById("variables");
+    variables.addEventListener('click', function () {
+        window.location.href = 'Variables.html';
+    });
+
+    let forLoop = document.getElementById("forLoop");
+    forLoop.addEventListener('click', function () {
+       window.location.href = 'ForCiklus.html';
+    });
+
+    let functionsID = document.getElementById("functionsID")
+    {
+        functionsID.addEventListener('click', function () {
+            window.location.href = 'functions.html';
+        })
+    }
+
+    let ifElseID = document.getElementById("ifElseID")
+    {
+        ifElseID.addEventListener('click', function () {
+            window.location.href = 'if-else.html';
+        })
+    }
+
+    let tuplesID = document.getElementById("tuplesID")
+    {
+        tuplesID.addEventListener('click', function () {
+            window.location.href = 'tuple.html';
+        })
+    }
+
+    let printID = document.getElementById("printID")
+    {
+        printID.addEventListener('click', function () {
+            window.location.href = 'print.html';
+        })
+    }
+
+    let listsID = document.getElementById("listsID")
+    {
+        listsID.addEventListener('click', function () {
+            window.location.href = 'listi.html';
+        })
+    }
+</script>
+</body>
+</html>

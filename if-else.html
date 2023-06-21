@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roller Coaster</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-1.8.2.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <script>
+        $(document).ready(function() {
+            $("#accordion").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content"
+            });
+
+            $("#accordion").on("accordionactivate", function(event, ui) {
+                $(this).accordion("refresh");
+
+                var activePanel = $(ui.newPanel);
+                activePanel.css("height", "auto");
+            });
+        });
+    </script>
+</head>
+<body class="body-if">
+
+<div class="background"></div>
+
+<div id="main" class="container">
+
+
+    <div class="middle-div middle-if">
+        <header>
+            <a href="index.html"><img class="next-button" src="img/sledno.png" alt="Next"></a>
+        </header>
+        <h1 style="color: #efdafb;">If-else</h1>
+        <div class="subtitle" >Roller Coaster</div>
+        <p style="color: black;">Дали сте спремни за авантура? </p>
+        <p style="color: black;">Дали сакаш да се возиш на ролер костер? Најпрвин треба да провериме дали ги исполнуваш условите за да можеш да се возиш на ролер костер. За таа цел ќе треба да креираме Python програма која ќе ни кажува дали според внесените податоци (возраст и висина) се исполнети условите за да може една личност да се вози на ролер костер. </p>
+        <div id="accordion">
+            <h3 class="accordion-header">Што e if услов?</h3>
+            <div class="section">
+                <p>Со помош на if услови ќе ја креираме оваа програма. Како најлено може да разбереш што прави еден  услов. Сите прашања на кои може да се одговори со ДА (Тrue) или НЕ (False) може да бидат претставени како  услов. Во нашиот случај ќе бараме одговор на прашањето: Дали посетителот може да се вози на ролер костер? Но, за да можеме да одговориме на прашањето најпрвин треба да заклучиме дека треба да бидат исполнети неколку услови, односно еден посетител може да се вози на ролер костер АКО е постар од 12 години и АКО е повисок од 140cm. <br>
+                    Најпрвин креирај две променливи едната нека се вика vozrast, а другата visina. <br>
+
+                </p>
+                <div class="code">
+                    <pre>
+                        <code>
+# Definiranje promenlivi
+vozrast = 13
+visina = 155
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <h3 class="accordion-header">Што се оператори?</h3>
+            <div class="section">
+                <p>
+                    За да може да споредиме две или повеќе вредности користиме оператори. Постојат 6 оператори со кои ќе се запознаеме денес и тоа:
+                <ul>
+                    <li><p>> - операторот поголемо служи за споредба на две вредности дали првата вредност е поголема од втората
+                    </p></li>
+                    <li><p>< - операторот помало служи за споредба на две вредности, дали првата вредност е помала од втората вредност </p></li>
+                    <li><p>>= -  операторот поголемо еднакво служи за споредба на две вредности, дали првата вредност е поголема или еднаква од втората вредност</p></li>
+                    <li><p><= - операторот помала еднакво служи за споредба на две вредности, дали првата вредност е помала или еднаква од втората вредност</p></li>
+                    <li><p>== - операторот еднакво служи за споредба на две вердности, дали тие се еднакви </p></li>
+                    <li><p>!= - операторот различно служи за споредба на две вредности, дали тие се различни</p></li>
+                </ul>
+
+            </div>
+
+            <h3 class="accordion-header"> If-else </h3>
+            <div class="section">
+                <p>За креирање на нашите услови потребно е да користиме некои од операторите за споредба.</p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+if vozrast > 12:
+    print('Tochno')
+else:
+    print('Netochno')
+                            </code>
+                        </pre>
+                </div>
+
+                <p>Со овој услов го поставуваме прашањето: Дали личноста е постара од 12 години? АКО личноста е постара од 12 години на екран ќе се испечати точно, а ИНАКУ (ако е помала или ендква на 12) ќе испечати неточно и тоа го правиме со помош на else. Else е клучен збор кој се користи  за да се дефинира блок од код што треба да се изврши кога ниту еден од претходните услови не е исполнет. МНОГУ ВАЖНО: блокот од код во Python секогаш не спишува вовлечн навнатре.</p>
+                <p>Треба да биде исплнет уште еден услов во нашиот случај, личноста треба да биде повисока од 140cm. Како ќе го направиме тоа? Многу едноставно, доколку сакаме да додадеме уште еден услов тогаш ќе го напишеме клучниот збор and за да додадеме дополнителен услов. Ќе го прошириме претходниот код:</p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+if vozrast > 12 and visina > 140:
+    print('Tochno')
+else:
+    print('Netochno')
+                            </code>
+                        </pre>
+                </div>
+
+
+            </div>
+
+            <h3 class="accordion-header">Elif</h3>
+            <div class="section">
+                <p>Можеме дополнително да го прошириме кодот доколку сакаме да го информираме посетителот кој од условите не го исполнува. Тоа може да го направиме со клучниот збор elif. Elif се користи доколку сакаме да доадеме доплнителен услов кој ќе биде земен во предвид само доколку if условот е неточен. Во нашиот случај поединечно ќе проверуваме за висината и возраста: </p>
+                <div class="code">
+                        <pre>
+                            <code>
+if vozrast > 12 and visina > 140:
+    print('Mozhe da se vozite na roller coaster')
+elif  visina > 140 :
+    print('Zhal mi e ne go ispolnuvate uslovot za vozrast')
+elif vozrast > 12:
+    print('Zhal mi e ne go ispolnuvate uslovot za visnina')
+else:
+    print('Zhal mi e ne ispolnuvate nitu enden od uslovite')
+                            </code>
+                        </pre>
+                </div>
+            </div>
+
+
+            <h3 class="accordion-header">Реши сам</h3>
+            <div class="section">
+                <div class="code">
+                        <pre>
+                          <code>
+visina = 150
+godini = 14
+
+<input type="text" id="one" class="examples"> vozrast > 12 and visina > 140: <label for="one"></label>
+    print('Mozhe da se vozite na roller coaster')
+<input type="text" id="two" class="examples"> visina > 140 : <label for="two"></label>
+    print('Zhal mi e ne go ispolnuvate uslovot za vozrast')
+elif vozrast > 12:
+    print('Zhal mi e ne go ispolnuvate uslovot za visnina')
+<input type="text" id="three" class="examples"><label for="three"></label>
+    print("Zhal mi e ne ispolnuvate nitu eden uslov :(")
+                            </code>
+                        </pre>
+                    <div id="warning"></div>
+                    <button id="button" type="submit" onclick="redirectToPage()"  >Провери</button>
+                </div>
+
+                <script>
+                    var one = document.getElementById("one");
+                    var two = document.getElementById("two");
+                    var three = document.getElementById("three");
+                    var warning = document.getElementById("warning");
+
+                    function checkInputs() {
+                        var value1 = one.value.replace(/\s+/g, "").toLowerCase();
+                        var value2 = two.value.replace(/\s+/g, "").toLowerCase();
+                        var value3 = three.value.replace(/\s+/g, "").toLowerCase();
+                    }
+                    button.addEventListener("click", function () {
+                        var value1 = one.value.replace(/\s+/g, "").toLowerCase();
+                        var value2 = two.value.replace(/\s+/g, "").toLowerCase();
+                        var value3 = three.value.replace(/\s+/g, "").toLowerCase();
+
+                        if(value1 === 'if' && value2 === 'elif' && value3 === 'else:')
+                        {
+                            //window.location.href = 'FirstPagaAgain.html';
+                            warning.textContent = "Браво!!"
+
+                        }
+                        else
+                        {
+                            warning.textContent = "Имаш грешка некаде во твоите решенија. Обиди се повторно!"
+                        }
+                    });
+
+                    one.addEventListener("input", checkInputs);
+                    two.addEventListener("input", checkInputs);
+                    three.addEventListener("input", checkInputs);
+                </script>
+            </div>
+
+            <h3 class="accordion-header">Целиот код</h3>
+            <div class="section">
+                <form action="https://www.jdoodle.com/api/redirect-to-post/python3-programming-online" method="post" target="_blank">
+                     <textarea name="initScript" rows="8" cols="80">
+visina = 150
+godini = 14
+
+if visina > 140 and godini > 12:
+    print("Gi ispolnuvate uslovite, mozhe da se vozite na roler koster!")
+elif visina > 140:
+    print("Zhal mi e ne go ispolnuvate uslovot za vozrast.")
+elif godini > 12:
+     print("Zhal mi e ne go ispolnuvate uslovot za visina.")
+else:
+     print("Zhal mi e ne ispolnuvate nitu eden uslov :(")
+                        </textarea>
+                    <input type="submit" value="Изврши">
+                </form><br>
+            </div>
+
+            <br><br>
+            <br><br>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+</body>
+</html>

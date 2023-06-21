@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Трка</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-1.8.2.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+
+    <script>
+        $(document).ready(function() {
+            $("#accordion").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content"
+            });
+
+            $("#accordion").on("accordionactivate", function(event, ui) {
+                $(this).accordion("refresh");
+
+                var activePanel = $(ui.newPanel);
+                activePanel.css("height", "auto");
+            });
+        });
+    </script>
+</head>
+<body class="body-tuple">
+<div class="background"></div>
+
+<div id="main" class="container">
+
+
+    <div class="middle-div middle-tuple">
+        <header>
+            <a href="index.html"><img class="next-button" src="img/sledno.png" alt="Next"></a>
+        </header>
+        <h1 style="color: #efdafb;">Tuple</h1>
+        <div class="subtitle" >Трка</div>
+        <p style="color: black;">Замисли дека ти и твоите пријатели организирате трка и сакате да направите детална евиденција за секој од учесниците во трката. За таа цел може да користите посебна структура во Python наречена торка (tuple) за да ги зачувате сите податоци. Торките се слични со листите, имаат една клучна разлика: <b>торките не може да се менуваат.</b><br>
+        </p>
+        <div id="accordion">
+            <h3 class="accordion-header">Како се креира торка?</h3>
+            <div class="section">
+                <p>Секој од учесниците на трката треба да го пријави своето учество за да може да биде запишано неговото постигнато време во трката. Па за таа цел може да користиме торка во која ќе ги внесеме сите имиња на учесниците.
+                    <br>Торка се креира така што најпрвин и даваме име на торката, во нашиот случај ќе се вика ucesnici, потоа следи знакот за доделување = и во мали загради () ги пишуваме сите имиња на учесниците: </p>
+                <div class="code">
+                    <pre>
+                        <code>
+# Kreiranje torka
+ucesnici = ('Marko', 'Stefan', 'Viktorija', 'Bojana', 'Nikola')
+                        </code>
+                    </pre>
+                </div>
+                <p>Откако ќе ја креираме торката со учесници таа не може да се менува, што значи тоа ќе бидат сите учесници на нашата трка. Доколку сакаме да видиме колку учесници се пријавиле на нашата трка, може тоа да го направиме многу едноставно само доколу ја дознаеме должината на нашата торка. Тоа може да го направиме со функцијата len (за полесно да ја запамтите доаѓа од англискиот збор length што значи должина). </p>
+                <div class="code">
+                    <pre>
+                        <code>
+# Funkcija so koja ja dobivame dolzhinata
+len(ucesnici)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <h3 class="accordion-header">Пристап до елементи</h3>
+            <div class="section">
+                <p>
+                    Секој од учесниците има свој индекс по кој може да го пристапуваме. На пример индексот на Марко е 0, на Стефан е 1, а на Викторија е 2 итн. <br>
+                    За евиденција на времињата на секој од учесниците ќе креираме уште една торка која ќе се вика postignati_vreminja. Времињата за секој од учесниците ќе ги запишеме во истиот редослед како што ни се напишани во торкта учесници, се со цел нивните индекси да имаат иста вредност. Прво го внесуваме времето за Марко, па за Стефан итн.
+                <div class="code">
+                        <pre>
+                            <code>
+postignati_vreminja = (10.5, 12.2, 11.8, 13.5, 9.9)
+                            </code>
+                        </pre>
+                </div>
+            </div>
+
+            <h3 class="accordion-header"> Победник на трката </h3>
+            <div class="section">
+                <p>Откако сме ја пополниле и торката со времиња сакаме да видиме какви се резултатите. Сакаме да дознаеме кое е најдоброто време, а кое е најлошото време. Ова може наједноставно да го направиме со помош на функциите max() и min().</p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+max(postignati_vreminja)    #najlosho vreme
+min(postignati_vreminja)    #najdobro vreme
+                            </code>
+                        </pre>
+                </div>
+
+                <p>Вака ги добивме само времињата, но не знеме кој е победникот. Како може да го испечатиме името на победникот во нашата трка? Бидејќе индексите на торката со учесници соодвествува со индексите на торката со времиња, може да го пронајдеме индексот на најдоброто време во торката со времиња. Најпрвин ќе го зачуваме најдоброто време во една променлива која ќе се вика najdobro_vreme: </p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+najdobro_vreme = min(postignati_vreminja)
+                            </code>
+                        </pre>
+                </div>
+                <p>Следно ќе го пронајдеме индексот на најдобриот учесник, на следниот начин:</p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+index_na_pobednikot =  postignati_vreminja.index(najdobro_vreme)
+                            </code>
+                        </pre>
+                </div>
+                <p>Методот index() се применува на торката  postignati_vreminja, барајќи го najdobro_vreme. Методот го враќа индексот на првото појавување на таа вредност во торката, што во овој случај е 4.</p>
+                <p>
+                    За конечено на крај да може да пристапиме и до името на победникот во нашата трка:</p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+print('Pobednik e:')
+print(ucesnici[index_na_pobednikot])
+                            </code>
+                        </pre>
+                </div>
+                <p>Твоја задача е да ги предизвикаш твоите пријатели да учествуваат во оваа трка!</p>
+
+            </div>
+
+            <h3 class="accordion-header">Реши сам</h3>
+            <div class="section">
+                <div class="code">
+                        <pre>
+                          <code>
+ucesnici = <input type="text" id="one" class="examples" style="width: 20px;">'Marko', 'Stefan', 'Viktorija', 'Nikola'<input type="text" id="two" class="examples" style="width: 20px;"> <label for="one"></label> <label for="two"></label>
+postignati_vreminja = (10.5, 12.2, 11.8, 9.9)
+
+# Dolzhinata na torkata
+<input type="text" id="three" class="examples">(ucesnici) <label for="three"></label>
+
+# Najdobro vreme
+najdobro_vreme = <input type="text" id="four" class="examples">(postignati_vreminja) <label for="four"></label>
+# Najlosho vreme
+najlosho_vreme = max(<input type="text" id="five" class="examples">)<label for="five"></label>
+
+index_na_pobednikot =  postignati_vreminja.index(najdobro_vreme)
+# Se pechati imeto na pobednikot
+print(ucesnici[index_na_pobednikot])
+
+                            </code>
+                        </pre>
+                    <div id="warning"></div>
+                    <button id="button" type="submit" onclick="redirectToPage()"  >Провери</button>
+                </div>
+            </div>
+
+
+            <h3 class="accordion-header">Целиот код</h3>
+            <div class="section">
+                <form action="https://www.jdoodle.com/api/redirect-to-post/python3-programming-online" method="post" target="_blank">
+                     <textarea name="initScript" rows="8" cols="80">
+ucesnici = ('Marko', 'Stefan', 'Viktorija', 'Bojana', 'Nikola')
+postignati_vreminja = (10.5, 12.2, 11.8, 13.5, 9.9)
+
+print(f'Ucestvuvaat vkupno {len(ucesnici)} ucesnici vo trkata')
+
+najdobro_vreme = min(postignati_vreminja)
+najlosho_vreme = max(postignati_vreminja)
+
+print(f'Najdobroto vreme e {najdobro_vreme}')
+print(f'Najlosho vreme e {najlosho_vreme}')
+
+index_na_pobednikot =  postignati_vreminja.index(najdobro_vreme)
+print(f'Pobednik e ucesnikot so index {index_na_pobednikot}')
+print(f'POBEDNIK: {ucesnici[index_na_pobednikot]}')
+                        </textarea>
+                    <input type="submit" value="Изврши">
+                </form><br>
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+    </div>
+</div>
+
+<script>
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    var three = document.getElementById("three");
+    var four = document.getElementById("four");
+    var five = document.getElementById("five");
+    var warning = document.getElementById("warning");
+
+    function checkInputs() {
+        var value1 = one.value.replace(/\s+/g, "").toLowerCase();
+        var value2 = two.value.replace(/\s+/g, "").toLowerCase();
+        var value3 = three.value.replace(/\s+/g, "").toLowerCase();
+        var value4 = four.value.replace(/\s+/g, "").toLowerCase();
+        var value5 = five.value.replace(/\s+/g, "").toLowerCase();
+    }
+    button.addEventListener("click", function () {
+        var value1 = one.value.replace(/\s+/g, "").toLowerCase();
+        var value2 = two.value.replace(/\s+/g, "").toLowerCase();
+        var value3 = three.value.replace(/\s+/g, "").toLowerCase();
+        var value4 = four.value.replace(/\s+/g, "").toLowerCase();
+        var value5 = five.value.replace(/\s+/g, "").toLowerCase();
+
+        if(value1 === '(' && value2 === ')' && value3 === 'len' && value4 === 'min' && value5 === 'postignati_vreminja')
+        {
+            //window.location.href = 'FirstPagaAgain.html';
+            warning.textContent = "Браво!!"
+
+        }
+        else
+        {
+            warning.textContent = "Имаш грешка некаде во твоите решенија. Обиди се повторно!"
+        }
+    });
+
+    one.addEventListener("input", checkInputs);
+    two.addEventListener("input", checkInputs);
+    three.addEventListener("input", checkInputs);
+    four.addEventListener("input", checkInputs);
+    five.addEventListener("input", checkInputs);
+</script>
+</body>
+</html>

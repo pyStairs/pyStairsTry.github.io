@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <title>Листи</title>
+    <link rel="stylesheet" type="text/css" href="lististil.css">
+
+</head>
+<body>
+<header>
+    <a href="index.html"><img class="next-button" src="img/sledno.png" alt="Next"></a>
+</header>
+<h1><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Листи во Python</i></h1>
+<h2><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Екскурзија</i><br><br>
+   Ќе одиш на екскурзија со твојот клас, но не знаеш што треба да купиш?<br> Сакаш да и олесниш на твојата мајка со тоа што сам ќе си креираш листа на работи кои ти се потребни?<br>Можеш тоа да го направиш
+    со помош на Python.<br>Но, прво мора да научиш како изгледаат листите во  Python.
+
+</h2>
+
+<div class="section" onclick="toggleDropdown('print')">Што се листи?</div>
+<div id="printDropdown" class="dropdown-content" style="font-size: 20px">
+    <p style="font-size: 20px">Листите се користат за складирање на повеќе податоци во една променлива.</p>
+   <p style="font-size: 20px">Листите се еден од 4 вградени типови на податоци во Python, кои се користат за складирање на збирки од објекти. Останатите 3 се Tuples, Set и Dictionary, сите со различни квалитети и употреба.</p>
+    <p style="font-size: 20px">Објекти во листата се подредени, може да се менуваат и дозволуваат дупликати на вредностите.
+
+        Објектите во листата имаат индекси, првиот објект има индекс [0], вториот има индекс [1] итн.
+
+        Кога кажуваме дека листите се подредени, тоа значи дека објектите имаат дефиниран редослед и тој редослед нема да се менува.
+
+        Ако додадеме нови објекти во листата, новите објекти ќе бидат поставени на крајот на листата.</p><img src="images/list.png" alt="Lista">
+    <p style="font-size: 20px"><u>За да замениме одреден објект од листата пишуваме вака:</u> <br> <br> letters[0]="d" <br>
+    Сега буквата а ќе се промени со буквата d. Можеш да ги промениш сите објекти во листата доколку им го знаеш нивниот правилен индекс.</p>
+</div>
+<div class="section" onclick="toggleDropdown('input')">Пример за креирање листа</div>
+<div id="inputDropdown" class="dropdown-content">
+    <p style="font-size: 20px"><u>Листите се креираат вака:</u><br><br></p>
+    <p>thislist = ["јаболко", "банана", "цреша"] -<i> Овде ги внесуваме објектите во листата</i>
+<br><br>
+        print(thislist) -<i>а во овој дел се печатат на екран и можеме да ги видиме</i></p>
+    <p style="font-size: 20px"><u> Доколку сакаме да видиме колку елементи има во листата, треба да користиме посебна функција должина на листа која се вика len()</u></p>
+    <p>thislist = ["јаболко", "банана", "цреша"]
+<br>
+        print(len(thislist))-<i>во овој дел се печати бројот на елементи во листата прикажани на екран</i></p>
+    <p style="font-size: 20px"><u>Елементите во листата можат да бидат од било кој тип на податоци:</u>
+<br><br>
+        list1 = ["јаболко", "банана", "цреша"]
+<br>
+        list2 = [1, 5, 7, 9, 3]
+<br>
+        list3 = [True, False, False]
+<br><br> <u>ИЛИ сите типови заедно:</u><br>
+        list1 = ["abc", 34, Вистина, 40, "машко"]
+        <br> </p> <p style="font-size: 20px">
+
+        mylist = ["јаболко", "банана", "цреша"] <br>
+
+        print(type(mylist)) - ова ќе испечати типот на листата. Во овој пример е < class 'list'>, што укажува дека оваа променлива е од тип List.<br>
+    Доколку не сте сигурни кој е типот на променливата, постои функција која може да ви каже за конкретна променлива од кој тип е.
+</p>
+
+</div>
+<div class="section" onclick="toggleDropdown('lists')">Пакувај се за екскурзија со Python!</div>
+<div id="listsDropdown" class="dropdown-content">
+    <p style="font-size: 20px">Време е да се спакуваме за екскурзија.Одбери една категорија и одбери 5 работи кои сакаш да ги понесеш со тебе.<br>Те охрабрувам да ги испробаш сите категории, за да бидеш што повеќе спремен и да го извежбаш Python!</p>
+    <h2 style="font-size: 20px">Одбери категорија:</h2>
+    <select id="categorySelect" onchange="selectCategory()">
+        <option value="">Одбери категорија</option>
+        <option value="fruits">Овошје</option>
+        <option value="clothes">Облека</option>
+        <option value="drink">Пијалок</option>
+    </select>
+    <div id="inputArea" style="display: none;">
+        <h2>Креирај листа од <br>&nbsp;&nbsp;&nbsp;&nbsp;<span id="categoryName"></span>:</h2>
+        <textarea id="listItemInput" oninput="updateList(event)" rows="5" cols="40" placeholder='Внеси ги во овој формат "myList = ["item1", "item2", "item3", "item4", "item5"]'></textarea>
+        <button id="printBtn" onclick="printList()" disabled>Print List</button>
+        <ul id="listItems"></ul>
+    </div>
+</div>
+
+
+
+<script src="javalisti.js"></script>
+</body>
+</html>

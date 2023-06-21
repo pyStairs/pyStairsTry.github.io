@@ -1,0 +1,191 @@
+body
+{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #2980b9;
+    background: linear-gradient(215deg, #71b073 29.9%, #2776aa 80%), linear-gradient(304deg, rgba(255, 101, 53, 0.4) 24.9%, #aa2743 91%), linear-gradient(10deg, #b1c9d8 19.9%, #2776aa 50%), linear-gradient(145deg, #f4df26 15.9%, #ff1b9a 40%), no-repeat;
+    background-blend-mode: hard-light;
+    margin-top: 150px;
+    margin-bottom: 340px;
+}
+
+#main
+{
+    width: 80%;
+    padding: 20px;
+    font-family: "serif","Times New Roman";
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    display: inline-block;
+    color: white;
+    background-color: rgba(183,183,183,0.82);
+}
+#accordion
+{
+    padding-top: 50px;
+    padding-bottom: 15px;
+}
+.section
+{
+    padding: 10px;
+    font-family: "serif","Times New Roman";
+    font-size: 20px;
+}
+#important
+{
+    padding: 10px;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 900px;
+    margin-left: 150px;
+    margin-bottom: 25px;
+    background-color: rgba(96,69,137,0.49);
+}
+.accordion-header
+{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "serif","Times New Roman";
+    height: 25px;
+    padding: 10px;
+    color: rgba(65,52,137,0.49);
+}
+#box
+{
+    display: inline;
+
+}
+#title
+{
+    font-size: 28px;
+    padding-top: 10px;
+    padding-left: 15px;
+    font-weight: bold;
+}
+#codeIsFun
+{
+    margin-right: 20px;
+}
+#result2, #decimal2, #string2
+{
+    color: #523D35;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+}
+#result1, #decimal1, #string1
+{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+#input1
+{
+    padding: 20px;
+    border: 4px solid #B0D4B8;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+#input2
+{
+
+    padding: 20px;
+    border: 2px solid rgb(242,133,59);
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+#input3
+{
+    padding: 20px;
+    border: 2px solid cornflowerblue;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.example
+{
+    width: 100px;
+    text-align: center;
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(60,142,208,0.71);
+    color: white;
+    padding: 5px;
+    position: relative;
+    animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+#zadaci
+{
+    text-align: center;
+    margin-top: 15px;
+    font-style: initial;
+    font-size: 22px;
+}
+#zadaca1, #zadaca2{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.examples
+{
+
+    margin: 20px 0 10px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333333;
+}
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.next-button{
+    display: inline-block;
+    margin: 5px;
+    height: 25px;
+    width: 25px;
+}
+footer{
+    background-position: center;
+    width: 100%;
+    height: 93px;
+    bottom: 0;
+    position: fixed;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+
+
+

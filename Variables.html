@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Променливи</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-1.8.2.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="VariablesCSS.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <script>
+        $(document).ready(function (){
+            $("#accordion").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content",
+                disabled: true
+            });
+            $("#accordion h3.accordion-header").click(function () {
+                $(this).next().slideToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<div id="main">
+    <header>
+        <a href="index.html"><img class="next-button" src="img/sledno.png" alt="Next"></a>
+    </header>
+    <div id="title">Променливи во Пајтон</div>
+
+<div id="accordion">
+    <h3 class="accordion-header">Вовед во променливи</h3>
+        <div class="section">
+            Здраво, <br>дали некогаш си играл некоја игра во која било потребно да запаметиш нешто, како на пример некој таен код или специјален објект.<br>
+            Ако твојот одговор е да, променливите во Пајтон можеш да ги замислиш како контејнери или места кои ни помагаат да запомниме или да зачуваме важни информации додека пишуваме компјутерска програма.<br>
+            Ајде да го објасниме ова преку едноставен пример. <br>
+            <div class="section1" style="display: flex">
+            <span style="display: inline-flex; width: 1200px">
+                <br>
+            Да замислиме дека имаш некаква магична кутија.<br>
+            Ти на оваа кутија можеш да и дадеш некое специјално име кое ти го сакаш.
+            <br>И оваа кутија може во неа да има што и да посакаш ти, како на пример некое вкусно колаче <br>или пак некој голем број.
+            </span>
+            <img id="box" src="images/istockphoto-1201336017-612x612.jpg " alt="picture" height="170px" width="200px" >
+            </div>
+            <div id="important">
+            Променливите во Пајтон се многу слични на оваа магична кутија. Тие се исто како давање на специјано име на една магична кутија во која можеме да чуваме што ќе посакаме.
+            </div>
+            Пременливите можат да содржат различни видови на информации, исто како што твојата кутија може да има различни работи во неа. Пременливите може да содржат броеви, како твоите години или твојот омилен број или пак тие можат да содржат зборови и реченици, како твоето име или пак некоја твоја тајна порака.<br> <hr>
+            Пример ако сакаме да водиме евиденција на твојте години. Можеме да создадеме една променлива која ќе се вика "age" и на неа ќе и дадеме вредност 9. Па секогаш кога ќе сакаме да ги дознаеме твојте години , само ќе треба да погледнеме во "age" специјалната кутија која ја има вредноста на твоите години.
+            <br> <br>
+            <div  style="display: flex">
+                <img id="codeIsFun" src="images/2023-05-12.png" alt="picture" height="250px" width="420px">
+                <span style="display: inline-flex">
+                    Една многу кул работа за променливите е тоа дека може да се менува нивта вредност кога и да посакаме. Исто како што ако во магичната кутија кога има некоја играчка внатре, ако посакаме може да ја извадиме и да ставиме нешто друго. Како што кажавме погоре во променливата "age" се твоите години. Но по една година ќе имаш 10 години, па ќе треба да ги промениме годините во оваа променлива од 9 на 10.
+                </span>
+            </div>
+            Помнењето на различни работи е многу важно во светот на програмирањето и променливите ни помагаат да ги помниме информациите додека ги пишуваме нашите програми во Пајтон. Тие се исто како магични кутии кои помнат работи за нас. Зарем не е тоа навистина кул!
+        </div>
+
+    <h3 class="accordion-header">Учиме да кодираме во Пајтон</h3>
+    <div class="section">
+        Веќе спомнавме дека променливите можат да содржат различни работи, како броеви или зборови. <br>
+        Ајде да видеме што точно може да има во нив и како тоа можеме да го напишеме со код во Пајтон.<br>
+        Да се потсетиме од математика дека постојат цели и децимални броеви. Целите броеви се броевите како 1,5,10, додека децималните броеви се броеви како 1,24 или пак 45,3<br>
+
+        <div id="input1">
+         За да продолжиме ќе треба да ми го споделиш твојот омилен цел број <br>
+        <label for="number"> Внеси го бројот овде: </label>
+        <input id="number" type="text" style="margin-left: 10px; margin-top: 10px">
+        <div id="result1"></div>
+        <div id="result2"></div>
+        </div>
+        <div id="input2">
+        Ајде сега напиши ми го твојот омилен децимален број <br>
+        <label for="decimal">Внеси го бројот овде: </label>
+        <input id="decimal" type="text" style="margin-left: 10px; margin-top: 10px">
+        <div id="decimal1"></div>
+        <div id="decimal2"></div>
+        </div>
+
+        <div id="input3">
+            Сега би било убаво да го споделиш со мене името на твојот најдобар другар <br>
+            <label for="string">Внеси го името овде: </label>
+            <input id="string" type="text" style="margin-left: 10px; margin-top: 10px">
+            <div id="string1"></div>
+            <div id="string2"></div>
+            <div id="string3"></div>
+        </div>
+        Важно е да запометиш дека кај имињата на променливите не можеме да имаме празно место, празното место ќе го замениме со ' _ '. <br>
+        Тие може да започнат со голема или мала буква и може да содржат број. Исто така треба да ги пишуваш на <span style="font-weight: bold">латиница</span>!
+        <img src="images/d.jpg" alt="photo here" style="margin-top: 20px" width="500px">
+
+    </div>
+
+    <h3 class="accordion-header">И ова е многу битно</h3>
+    <div class="section">
+        <div  style="display: flex">
+            <span style="display: inline-flex; margin-top: 20px; margin-right: 15px">
+                Ајде сега да им дадеме уште малку магија на овие променливи со еден едноставен пример!
+            </span>
+            <img src="images/2023-05-13%20(2).png" alt="picture" height="100px" width="150px">
+        </div>
+        Имаме една променлива x и во неа ќе го сместиме бројот 3.
+        <div class="example"> x=3</div>
+        имаме уште една променлива y и во неа имаме нешто вакво
+        <div class="example">y = x+2</div>
+        Овде знаеме дека x има вредност 3, па за него ќе се земе таа вредност. И според тоа => 3+2=5, па y ќе има вредност 5. Променливата y ќе ја земе вредноста од променливата x. <br>
+        Ова е можно во пајтон и е доста корисно. <br>
+        Променливите се како делови од една сложувалка, кои се вклопуваат заедно. Секогаш можете да експериментирате со различни вредности и пресметки користејќи променливи. Тоа е исто како да имате свое магично стапче во светот на програмирањето. Продолжете да истражувате и уживајте во чудата на променливите!
+
+    </div>
+
+    <h3 class="accordion-header">Реши сам!</h3>
+    <div class="section">
+        <div id="zadaci">Сега е твој ред да покажеш што си научил преку две кратки задачи.</div>
+        <div id="zadaca1">
+            1.  Креирај променлива во пајтон со име my_variable и стави и вредност 7. <br>
+            <input type="text" id="one" class="examples">
+            <label for="one"></label>
+            <div id="messageOne"></div>
+        </div>
+        <div id="zadaca2">
+            2.  Креирај две променливи и стави им вредност 4 и 8. <br>Потоа креирај уште една променлива со име 'sum' во која ќе го пресметаш збирот на првите две променливи.<br>
+            <input type="text" id="two" class="examples">
+            <label for="two"><span style="margin: 0 5px 0 15px">  hint: </span>овде напиши ја првата променлива со име num1 и дај и вредност 4</label>
+            <br>
+            <div id="messageTwo"></div>
+            <input type="text" id="three" class="examples">
+            <label for="three"><span style="margin: 0 5px 0 15px">  hint: </span>овде напиши ја втората променлива со име num2 и дај и вредност 8</label>
+            <br>
+            <div id="messageThree"></div>
+            <input type="text" id="four" class="examples">
+            <label for="four"><span style="margin: 0 5px 0 15px">  hint: </span>овде напиши ја променливата sum, која е збир од првите две променливи </label>
+            <br>
+            <div id="messageFour"></div>
+        </div>
+        <button class="button" onclick="redirectToPage()">Почетна страна</button>    </div>
+
+</div>
+</div>
+
+<script>
+    let one = document.getElementById("one");
+    let two = document.getElementById("two");
+    let three = document.getElementById("three");
+    let four = document.getElementById("four");
+    let warning = document.getElementById("warning");
+
+    one.addEventListener("input", function () {
+        let value1 = one.value.replace(/\s+/g, "").toLowerCase();
+        let messageOne = document.getElementById("messageOne")
+        if(value1 === 'my_variable=7')
+        {
+            messageOne.textContent = `Точен одговор!`
+        }
+        else
+        {
+            messageOne.textContent = `Неточен одговор, обиди се повторно.`
+        }
+    });
+
+    two.addEventListener("input", function () {
+        let value2 = two.value.replace(/\s+/g, "").toLowerCase();
+        let messageTwo = document.getElementById("messageTwo")
+        if(value2 === 'num1=4')
+        {
+            messageTwo.textContent = `Точен одговор!`
+        }
+        else
+        {
+            messageTwo.textContent = `Неточен одговор, обиди се повторно.`
+        }
+    });
+
+    three.addEventListener("input", function () {
+        let value3 = three.value.replace(/\s+/g, "").toLowerCase();
+        let messageThree = document.getElementById("messageThree")
+        if(value3 === 'num2=8')
+        {
+            messageThree.textContent = `Точен одговор!`
+        }
+        else
+        {
+            messageThree.textContent = `Неточен одговор, обиди се повторно.`
+        }
+    });
+
+    four.addEventListener("input", function () {
+        let value4 = four.value.replace(/\s+/g, "").toLowerCase();
+        let messageFour = document.getElementById("messageFour")
+        if(value4 === 'sum=num1+num2')
+        {
+            messageFour.textContent = `Точен одговор!`
+        }
+        else
+        {
+            messageFour.textContent = `Неточен одговор, обиди се повторно.`
+        }
+    });
+
+    let input = document.getElementById('number');
+    let result = document.getElementById('result1');
+    let final = document.getElementById('result2');
+
+    let decimal = document.getElementById('decimal');
+    let decimal1 = document.getElementById('decimal1');
+    let decimal2 = document.getElementById('decimal2');
+
+    let string = document.getElementById('string');
+    let string1 = document.getElementById('string1');
+    let string2 = document.getElementById('string2');
+    let string3 = document.getElementById('string3');
+
+    input.addEventListener("input",function () {
+        let value = input.value;
+        if(!isNaN(value))
+        {
+            result.textContent = `Супер. Сега овој број да го сместиме во една променлива која ќе се вика 'favorite_number'.`;
+            final.textContent = `Тоа со код би изгледало вака: favorite_number = ${value}`;
+        }
+        else
+        {
+            result.textContent = "Те молам внеси цел број."
+        }
+    });
+
+    decimal.addEventListener("input",function () {
+        let value = decimal.value;
+        let regex = /^-?\d*\.?\d+$/;
+        if(regex.test(value))
+        {
+            decimal1.textContent = `Сега можеме и децималниот број да го сместиме во нова променлива. Па би имале:`;
+            decimal2.textContent = `decimal_number = ${value}`;
+        }
+        else
+        {
+            decimal2.textContent = "Те молам внеси децимален број."
+        }
+    })
+
+    string.addEventListener("input", function () {
+        let value = string.value;
+        const regex = /^[a-zA-Z]+$/;
+        if(regex.test(value))
+        {
+            string1.textContent = `Ти благодарам, сега и ова име можеме да го сместиме во една променлива која ќе се вика 'bestFriend'`;
+            string2.textContent = `bestFriend = '${value}'`;
+            string3.textContent = "Битно е да се забележи дека името сега ќе стои во наводници, ова се случува само кога имаме букви или зборови."
+        }
+        else
+        {
+            string2.textContent = "Те молам внеси го правилно името на твоето другарче"
+        }
+    })
+    function redirectToPage() {
+        window.location.href = "index.html";
+    }
+</script>
+</body>
+</html>

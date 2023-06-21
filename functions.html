@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Spotify</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-1.8.2.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+
+    <script>
+        $(document).ready(function() {
+            $("#accordion").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content"
+            });
+
+            $("#accordion").on("accordionactivate", function(event, ui) {
+                $(this).accordion("refresh");
+
+                var activePanel = $(ui.newPanel);
+                activePanel.css("height", "auto");
+            });
+        });
+    </script>
+
+
+</head>
+
+<body class="body-spotify">
+
+<div class="background spotify"></div>
+
+<div id="main" class="container">
+    <div class="left-div left-spotify"></div>
+
+
+    <div class="middle-div middle-spotify">
+        <header>
+            <a href="index.html"><img class="next-button" src="img/sledno.png" alt="Next"></a>
+        </header>
+        <h1>Функции</h1>
+        <div class="subtitle">Мy Spotify</div>
+        <p>Дали сакаш да слушаш музика? Кои се твоите омилени песни? </p>
+        <p>Ќе креираме наша врезија на Spotify која ќе ја наречеме Мy Spotify. Преку креирање на My Spotify ќе успееш да разбереш што се тоа функции, како се користат и зошто се користат. Но најпрвин треба да се запознаеме со термините.</p>
+        <div id="accordion">
+            <h3 class="accordion-header">Што се функции?</h3>
+            <div class="section">
+                <p>Функција е именуван блок од код што извршува одредена задача. Може да прима влезни вредности (аргументи) и може да врати резултат. Функциите го разложуваат кодот на помали делови кои можат повторно да се употребат.<br>
+                    Функциите се дефинираат со клучниот збор "def" (изведен од англискиот збор "define"), проследен со името на функцијата, потоа загради кои опционално можат да содржат еден или повеќе параметри (познати и како аргументи).<br>
+
+                </p>
+                <div class="code">
+                    <pre>
+                        <code>
+# Definiranje funkcija
+def ime_na_funkcija(argument):
+    # Blok od kod
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <h3 class="accordion-header">Што се аргументи?</h3>
+            <div class="section">
+                <p>
+                    Аргумент е вредност или променлива што се дава на функција кога се повикува. Ги обезбедува потребните податоци или влезови за функцијата да ја изврши својата специфична задача.<br>
+                    Да се повика функција во програмирањето значи да се изврши или да се користи блокот од код на функцијата.
+
+                </p>
+
+            </div>
+
+            <h3 class="accordion-header"> My Spotify </h3>
+            <div class="section">
+                <p>Пред да започнеме со креирање на функциите треба да креираме една листа од песни.</p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+# Kreirame lista od pesni
+playlist = ['Love of my life','Bohemian Rhapsody','Good Company']
+                            </code>
+                        </pre>
+                </div>
+
+                <p>Мy Spotify ќе има можност за приказ на песните од playlist, стартување на песна, преоѓање на следна песна, како и сопирање на песна. Сите овие претставуваат некаква функционалност, па така за секоја функционалност може да креираме посебна функција. <br> Вкупно ќе имаме 4 функции.</p>
+
+            </div>
+
+            <h3 class="accordion-header">Функции без параметри</h3>
+            <div class="section">
+                <p>Прво ќа ја креираме функцијта за сопирање на песна. Оваа функција ќе ја именуваме stop.</p>
+                <div class="code">
+                        <pre>
+                            <code>
+# Kreiranje na funkcijata stop()
+# Zagradite se prazni bidejkje funkcijata ne prima argument
+def stop():
+    print('Pesnata e soprena')
+                            </code>
+                        </pre>
+                </div>
+                <p>Функција без аргументи е функција која не бара никакви влезни вредности за извршување на својата задача. Затоа во овој случај користиме функција без аргументи, кога сакаме да ја сопреме песната не е потребен ниту еден аргумент за сопирање. <br>
+                    Доколку сакаме да ја повикаме оваа функција тоа ќе го направиме на следниот начин: </p>
+                <div class="code">
+                        <pre>
+                            <code>
+def stop():
+    print('Pesnata e soprena')
+
+stop() # Povik na funkcija
+                            </code>
+                        </pre>
+                </div>
+                <p>Го пишуваме името на функцијата придружено со мали загради. Бидејќи функцијата не побарува никаков аргумент заградите се празни.<br>
+                    Со повик на оваа функција ќе биде извршено <b>print('Pesnata e soprena')</b>. На екран ќе биде испиашано <i><b>Pesnata e soprena</b></i> </p>
+            </div>
+
+            <h3 class="accordion-header">Функции со еден параметар</h3>
+            <div class="section">
+                <p>Следно ќе ја дефиниравме функцијата play и во мали загради ќе го пратиме пареметарот song кој го содржи името на песната која сакаме да ја пуштиме. Оваа функција кога ќе биде повикана дава информација која песна сме ја пуштиле. Мора да напоменеме дека и тука исто како и кај if условот го започнуваме блокот со наредби со вовлекување на функционалностите навнатре, ова е многу <b>важно</b> во Пајтон. <br></p>
+                <div class="code">
+                        <pre>
+                            <code>
+# Startuvanje na pesna
+def play(song):
+    print ('Ja pushtivte pesnata: ' + song)
+                            </code>
+                        </pre>
+                </div>
+
+                <p>Доколку сакаме да ја повикаме оваа функција тоа ќе го направиме на следниот начин:</p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+def play(pesna):
+    print ('Ja pushtivte pesnata: ' + pesna)
+# Povik na finkcijata play
+ play('Love of my life')
+                            </code>
+                        </pre>
+                </div>
+
+                <p>Го пишуваме името на финкцијата, а потоа во мали загради го пишуваме параметарот, во овој случај името на песната која сакаме да ја пуштиме.</p>
+            </div>
+
+            <h3 class="accordion-header">Функции со повеќе параметри</h3>
+            <div class="section">
+                <p>За преглед на песните кои ги има во листата ќе напишеме и функција izlistaj_pesni(), која како параметар ќе ја прими нашата листа playlist. </p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+def list_songs(playlist):
+    print('Dostapni pesni: ')
+    for song in playlist:
+        print('- ' + song)
+
+list_songs(playlist)
+                            </code>
+                        </pre>
+                </div>
+
+                <p>Во овој блок од код со помош на for циклус ја листаме целата плејлиста и ги печатиме сите песни за да имаме поголема прегледност. На крајот ја повикуваме функцијата izlistaj_pesni(playlist) и во заградите ја праќаме листата со песни. <br>
+                <h4>Дополнително</h4>
+                Следно може да ја креираме функцијата sledna_pesna(), оваа функција ќе прими два параметри: името на тековната песна, како и плејлистата.</p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+def next_song(song, playlist):
+    index = playlist.index(song)
+    print('Sledna pesna e ' + playlist[index+1])
+    play(playlist[index+1])
+                            </code>
+                        </pre>
+                </div>
+
+                <p>За да знаеме која е следната песна најпрвин треба да го најдеме индекот на тековната песна. Тоа го правиме со функцијата playlist.index(pesna). Откако го знаеме индекот на тековната песна и сме го сместиле во променливата index, може да пристапиме до следната песна доколку го зголемиме индексот за еден. На екран печатиме која е следната песна и потоа ја повикуваме функцијата play(playlist[index+1]) за да ја стартуваме следната песна. <br>
+                    До оваа функција ќе пристапиме на истиот начин како и до останатите функции само што сега ќе испраќаме два параметри.</p>
+
+                <div class="code">
+                        <pre>
+                            <code>
+next_song('Love of my life', playlist)
+                            </code>
+                        </pre>
+                </div>
+            </div>
+
+            <h3 class="accordion-header">Реши сам</h3>
+            <div class="section">
+                <div class="code">
+                        <pre>
+                          <code>
+
+def izlistaj(playlist):
+    print("Dostapni pesni ")
+    for pesna in playlist:
+        print('- ' + pesna)
+
+def play(pesna):
+    print('Ja pushtivte pesnata ' + pesna)
+
+def stop():
+    print('Pesnata e soprena')
+
+def sledna(song, playlist):
+    index = playlist.index(song)
+    print("Sledna pesna e: " + playlist[index])
+    play(playlist[index])
+
+
+playlist = ['Love of my life', 'Bohemian Rhapsody', 'Good Company']
+
+# Povikajte ja funkcijata izlistaj
+izlistaj<input type="text" id="one" class="examples"> <label for="one"></label>
+
+# Povikajte ja vistinskata funkcija
+<input type="text" id="two" class="examples">('Love of my life') <label for="two"></label>
+sledna('Love of my life', playlist)
+
+# Povikajte ja funkcijata stop
+stop<input type="text" id="three" class="examples"> <label for="three"></label>
+
+                            </code>
+                        </pre>
+                    <div id="warning"></div>
+                    <button id="button" type="submit" onclick="redirectToPage()"  >Провери</button>
+                </div>
+
+                <script>
+                    var one = document.getElementById("one");
+                    var two = document.getElementById("two");
+                    var three = document.getElementById("three");
+                    var warning = document.getElementById("warning");
+
+                    function checkInputs() {
+                        var value1 = one.value.replace(/\s+/g, "").toLowerCase();
+                        var value2 = two.value.replace(/\s+/g, "").toLowerCase();
+                        var value3 = three.value.replace(/\s+/g, "").toLowerCase();
+                    }
+                    button.addEventListener("click", function () {
+                        var value1 = one.value.replace(/\s+/g, "").toLowerCase();
+                        var value2 = two.value.replace(/\s+/g, "").toLowerCase();
+                        var value3 = three.value.replace(/\s+/g, "").toLowerCase();
+
+                        if(value1 === '(playlist)' && value2 === 'play' && value3 === '()')
+                        {
+                            //window.location.href = 'FirstPagaAgain.html';
+                            warning.textContent = "Браво!!"
+
+                        }
+                        else
+                        {
+                            warning.textContent = "Имаш грешка некаде во твоите решенија. Обиди се повторно!"
+                        }
+                    });
+
+                    one.addEventListener("input", checkInputs);
+                    two.addEventListener("input", checkInputs);
+                    three.addEventListener("input", checkInputs);
+                </script>
+            </div>
+
+            <h3 class="accordion-header">Целиот код</h3>
+            <div class="section">
+                <form action="https://www.jdoodle.com/api/redirect-to-post/python3-programming-online" method="post" target="_blank">
+                     <textarea name="initScript" rows="8" cols="80">
+def izlistaj(playlist):
+    print("Dostapni pesni ")
+    for pesna in playlist:
+        print('- ' + pesna)
+
+def play(pesna):
+    print('Ja pushtivte pesnata ' + pesna)
+
+def stop():
+    print('Pesnata e soprena')
+
+def sledna(pesna, playlist):
+    index = playlist.index(pesna)
+    print("Sledna pesna e: " + playlist[index])
+    play(playlist[index])
+
+
+playlist = ['Love of my life', 'Bohemian Rhapsody', 'Good Company', 'Death on two legs']
+izlistaj(playlist)
+play('Love of my life')
+sledna('Love of my life', playlist)
+stop()
+                        </textarea>
+                    <input type="submit" value="Изврши">
+                </form><br>
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+    </div>
+    <div class="right-div right-spotify"></div>
+</div>
+
+<footer class="footer-spotify"></footer>
+</body>
+</html>

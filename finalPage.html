@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Final </title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-1.8.2.js"></script>
+
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="FinalPageCSS.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <script>
+        $(document).ready(function (){
+            $("#accordion").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content",
+                disabled: true
+            });
+            $("#accordion h3.accordion-header").click(function () {
+                $(this).next().slideToggle();
+            });
+
+        });
+    </script>
+
+
+</head>
+<body id="mainn">
+<div id="main">
+    <header>
+        <a href="index.html"><img class="next-button" src="img/sledno.png" alt="Next"></a>
+    </header>
+    <div id="title">Ова е крајот</div>
+
+    <div id="accordion">
+        <h3 class="accordion-header">Објаснување</h3>
+        <div class="section">
+            И конечно стигнавме до самиот крај.<br>
+            Сега те очекува една многу интересна задача.<br>
+            Нашиот тим смисли еден таен збор, кој ти треба да го откриеш и да го напишеш во последниот дел 'Таен збор'.<br>
+            Зборот ќе го откриеш со тоа што ќе ги решиш следните 8 задачки.<br>
+            Со секоја точно решена задачка, ќе добиеш една буква од зборот.<br>
+            Така што, со  8 успешни задачки, ќе можеш да го откриеш тајниот збор!<br>
+            <span style="font-weight: bold">Среќно и уживај!</span>
+            <br><br>
+            <div>Доколку сакаш да ги видиш точните одговори на секоја задача, претисни на клучот!</div>
+            <button class="button" id="pop"><span class="buttonText">Клуч</span></button>
+            <div class="popup" id="popup">
+                <h2>Клуч</h2>
+                <p>Задача 1. def myFunction():</p>
+                <p>Задача 2. x = "Hello"[0]</p>
+                <p>Задача 3. ("apple", "banana", "cherry")</p>
+                <p>Задача 4. fruits[0] = "kiwi"</p>
+                <p>Задача 5. my_function()</p>
+                <p>Задача 6. a!=b:</p>
+                <p>Задача 7. len(fruits)</p>
+            </div>
+
+        </div>
+
+        <h3 class="accordion-header">Задача 1</h3>
+        <div class="section">
+             Кој е правилниот начин за имплементација на фунција во Python?<br>
+            <input type="radio" name="option" value="1"> create myFunction(): <br>
+            <input type="radio" name="option" value="2"> def myFunction(): <br>
+            <input type="radio" name="option" value="3"> function myfunction(): <br> <br>
+            <button id="button1" class="button"><span class="buttonText">Откриј ја буквата</span></button>
+            <div id="message1"></div>
+        </div>
+
+        <h3 class="accordion-header">Задача 2</h3>
+        <div class="section">
+            Која е правилна синтакса, за да се најде првиот карактер од еден стринг?<br>
+            <input type="radio" name="option" value="1"> x = "Hello".sub(0, 1) <br>
+            <input type="radio" name="option" value="2"> x = sub("Hello", 0, 1) <br>
+            <input type="radio" name="option" value="3"> x = "Hello"[0] <br> <br>
+            <button id="button2" class="button"><span class="buttonText">Откриј ја буквата</span></button>
+            <div id="message2"></div>
+        </div>
+
+        <h3 class="accordion-header">Задача 3</h3>
+        <div class="section">
+            Кој од следните одговори дефинира tuple? <br>
+            <input type="radio" name="option" value="1"> {"apple", "banana", "cherry"} <br>
+            <input type="radio" name="option" value="2"> {"name": "apple", "color": "green"} <br>
+            <input type="radio" name="option" value="3"> ("apple", "banana", "cherry") <br>
+            <input type="radio" name="option" value="4"> ["apple", "banana", "cherry"]<br> <br>
+            <button id="button3" class="button"><span class="buttonText">Откриј ја буквата</span></button>
+            <div id="message3"></div>
+        </div>
+
+        <h3 class="accordion-header">Задача 4</h3>
+        <div class="section">
+            Дополни на празните места, така што ќе ја промениш вредноста од "apple" во "kiwi", во листата "fruits".
+            <pre>
+                <code>
+fruits = ["apple", "banana", "cherry"]
+
+  <input type="text" style="width: 180px" class="inputText" id="inputFour"><label for="inputFour"></label>
+                </code>
+            </pre>
+            <button id="button4" class="button"><span class="buttonText">Откриј ја буквата</span></button>
+            <div id="message4"></div>
+        </div>
+
+        <h3 class="accordion-header">Задача 5</h3>
+        <div class="section">
+            Повикај ја функцијата со име my_function.
+            <pre>
+                <code>
+def my_function():
+    print("Hello from a function")
+
+<input type="text" style="width: 280px" class="inputText" id="inputFive"><label for="inputFour"></label>
+                </code>
+            </pre>
+            <button id="button5" class="button"><span class="buttonText">Откриј ја буквата</span></button>
+            <div id="message5"></div>
+        </div>
+
+        <h3 class="accordion-header">Задача 6</h3>
+        <div class="section">
+            Пополни го празното место, така што ќе се испечати "Hello World" ако а <span style="font-weight: bold">НЕ</span> е еднаков на б.
+            <pre>
+                <code>
+a = 50
+b = 10
+<input type="text" style="width: 30px" class="inputText" id="ifInput"> a <input type="text" style="width: 30px" class="inputText" id="notEqualInput"> b <input type="text" style="width: 30px" class="buttonText" id="dotInput"> <label for="dotInput"></label>
+   print("Hello World")
+                </code>
+            </pre>
+            <button id="button6" class="button"><span class="buttonText">Откриј ја буквата</span></button>
+            <div id="message6"></div>
+        </div>
+
+        <h3 class="accordion-header">Задача 7</h3>
+        <div class="section">
+            Напиши ја правилната синтакса, за да се испечати бројот на овошки во торката fruits.
+            <pre>
+                <code>
+fruits = ("apple", "banana", "cherry")
+print(<input type="text" style="width: 120px" class="inputText" id="inputSeven">) <label for="inputSeven"></label>
+                </code>
+            </pre>
+            <button id="button7" class="button"><span class="buttonText">Откриј ја буквата</span></button>
+            <div id="message7"></div>
+        </div>
+
+        <h3 class="accordion-header">Задача 8</h3>
+        <div class="section">
+            Честитки! <br>
+            Оваа буква ја заслужуваш затоа што си супер! Смело се соочи со предизвикот и успешно го заврши курсот за кодирање. Браво за посветеноста и упорноста кои ги покажа. <br>
+            Не заборавај дека ова е само почетокот на твојата кодирачка приказна. Има уште толку многу што можеш да научиш и испробаш во светот на кодирањето. <br>
+            Се надевам дека ќе продолжиш да се вклучуваш, да испробуваш нови идеи и да ги развиваш своите вештини уште повеќе. Имај доверба во своите способности и посвети се на она што те интересира и возбудува. <br>
+            Кодирањето може да ти донесе неверојатни прилики и искуства. Среќно во твоите следни подвизи. <br>
+            Со љубов, тимот на PyStairs!<br><br>
+            <button id="button8" class="button"><span class="buttonText">Откриј ја буквата</span></button>
+            <div id="message8"></div>
+        </div>
+
+        <h3 class="accordion-header">Таен збор</h3>
+        <div class="section">
+            <br>
+            <div id="squares"></div>
+            <br>
+            <label for="guessInput">Напиши го тајниот збор овде!</label><br>
+            <input type="text" id="guessInput" placeholder="" class="inputText">
+            <button onclick="checkGuess()" class="buttonText">Провери</button>
+            <p id="message"></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="FinalPageJS.js"></script>
+</body>
+</html>

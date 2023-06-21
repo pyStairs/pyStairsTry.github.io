@@ -1,0 +1,235 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "serif","Times New Roman";
+    font-size: 18px;
+}
+.body-spotify{
+    background-color: #000000;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.left-div{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: 100vh;
+    width: 23%;
+    border-radius: 30px;
+    background-size: cover;
+}
+
+.left-spotify{
+    background-image: url('img/left.png');
+    background-repeat: no-repeat;
+}
+
+.middle-div{
+    display: inline-block;
+    margin-top: 0;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 48%;
+    border-radius: 30px;
+    margin: auto;
+    color: white;
+    letter-spacing: 1.3px;
+    align-items: stretch;
+}
+
+.middle-spotify{
+    background-image: linear-gradient(to bottom, #9b367e, #181818);
+}
+
+.right-div {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    height: 100vh;
+    width: 23%;
+    border-radius: 30px;
+    background-size: cover;
+}
+
+.right-spotify{
+    background-repeat: no-repeat;
+    background-image: url('img/right.png');
+}
+
+header, footer {
+    text-align: center;
+}
+
+header{
+    display: inline;
+    background: transparent;
+    width: 100%;
+    height: 60px;
+    z-index: 0;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+footer{
+    background-position: center;
+    width: 100%;
+    height: 93px;
+    bottom: 0;
+    position: fixed;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.footer-spotify{
+    background-image: url('img/spotify_footer.png');
+    background-repeat: no-repeat;
+}
+
+img {
+    height: 20px;
+}
+
+.next-button, .prev-button {
+    display: inline-block;
+    margin: 5px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 25px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
+.subtitle {
+    font-size: 24px;
+    margin-top: 5px;
+    color: #888;
+}
+
+pre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.code {
+    background-color: #e4d8e0;
+    padding: 5px;
+    font-family: monospace;
+    border-radius: 20px;
+    border: 8px solid #fff;
+    color: black;
+    letter-spacing: 1px;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+p{
+    clear: both;
+}
+
+form {
+    margin-bottom: 100px;
+}
+
+.prev-button:hover,  .next-button:hover{
+    box-shadow: 0 4px 8px rgba(252,203,1,255);
+}
+
+.body-if{
+    background-image: url('img/back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.middle-if{
+    width: 48%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.body-tuple{
+    background-image: url('img/screen.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.middle-tuple, .middle-intro, .middle-if{
+    background-color: white;
+    font-family: "serif","Times New Roman";
+}
+
+.body-intro{
+    background-image: url("img/intro.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.background-intro{
+    background-color: #77857b;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+}
+
+.x_button{
+    float: right;
+}
+
+.img_editor{
+    width: 100%;
+    height: 400px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.middle-intro{
+    object-fit: cover;
+}
+
+.examples{
+    padding: 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #a881af;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    float: right;
+    margin-bottom: 15px;
+    margin-right: 25px;
+}
+
+button:hover {background-color: #80669d;}
+
+button:active {
+    background-color: #80669d;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#accordion{
+    font-family: "serif","Times New Roman";
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+  <title>Print() функција</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<header>
+  <a href="index.html"><img class="next-button" src="img/sledno.png" alt="Next"></a>
+</header>
+<h1><i>Python print() функција</i></h1>
+<h2><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Мистериозен замок</i><br><br>Добредојде, млад истражувачу!
+  Се наоѓаш во таинствено кралство, сакаш да влезеш во него, но потребен ти е клуч.
+
+  <br>Но внимавај, клучот е заштитен со загатки и предизвици!<br>Прво мораш да разбереш како да го најдеш клучот преку учење Python.
+</h2>
+
+<div class="section" onclick="toggleDropdown('print')">Што е print() функцијата?</div>
+<div id="printDropdown" class="dropdown-content">
+  <p style="font-size: 20px">Функцијата print() печати дадената порака на екранот по внесување на твојот текст преку тастатура.</p>
+  <p style="font-size: 20px">Пораките се вредностите или изразите кои сакате да ги испечатите. Можете да имате колку што сакате аргументи и сите ќе бидат испечатени. Сите аргументи се одделени со запирка.<br>
+    Вредностите или изразите што се предаваат како аргументи може да бидат било каков тип на податоци во Python. <br>
+    Некои примери на вредности кои може да ги предадете се:<br>
+    Стрингови (низи од знаци):<br>
+    пр: print("Hello"), print('World'), print("The answer is", 42)<br>
+    Броеви (цели или децимални):<br>
+    пр: print(3), print(3.14)<br>
+    Променливи:<br>
+    пр: x = 10, y = "Python", print(x, y)<br>
+    Изрази:<br>
+    пр: print(2 + 2), print(len("Hello"))</p>
+  <p style="font-size: 20px"><u>Градба на print() функцијата</u><br><br>
+    print*(објект(и)*, sep=разделител, end=крај, file=датотека, flush=забрзај)</p>
+  <h4>Табела на објаснување на градбата</h4>
+  <table>
+    <tr>
+      <td>објект(и)</td>
+      <td>Било кој објект, и колку објекти сакаш.</td>
+    </tr>
+    <tr>
+      <td>sep='разделител'</td>
+      <td>Ова е опционално. Укажува како да се разделат објектите, ако има повеќе од еден. Default е ' ' (празно место).</td>
+    </tr>
+    <tr>
+      <td>end='крај' </td>
+      <td>Ова е опционално. Укажува на тоа што да се испечати на крајот. Default е '\n' (нова линија).</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>Ова е опционално. Објект со метод за запишување. Default е sys.stdout.</td>
+    </tr>
+    <tr>
+      <td>flush </td>
+      <td>Опционално. Булова вредност, која укажува на тоа дали излезот треба да се испразни (True) или да биде бафериран (False). Default е False.</td>
+    </tr>
+  </table>
+  <p style="font-size: 20px"><u>Прифаќање на влез од корисник</u><br><br>Во Python, користејќи го input() функцијата, примаме влез од корисникот, а користејќи го print() функцијата, прикажуваме излез на екранот. Корисниците со помош на input() функцијата можат да дадат било каква информација на апликацијата во облик на низи или броеви.</p>
+</div>
+
+<div class="section" onclick="toggleDropdown('input')">Пример за print() функцијата</div>
+<div id="inputDropdown" class="dropdown-content" style="font-size: 20px">
+  <p style="font-size: 20px">Прво се пишува ознаката на функцијата(print), потоа во посебна заграда го внесуваш тоа што сакаш да се испечати.</p>
+  <p style="font-size: 20px">print("WOW,", "Ова е магичен свет!")</p>
+  <p style="font-size: 20px">или<br> print('WOW,', 'Ова е магичен свет!')</p>
+  <p style="font-size: 20px"><u>По внесување на ова, на твојот екран ќе се испечати:</u><br>
+    WOW, Ова е магичен свет!?
+    <br></p>
+  <u>Python пример за прифаќање на влез од корисник:</u><br><br>
+
+  За да влезеш во магичниот свет прво треба да си го напишеш  името, презимето и твојата волшебна моќ.
+  Потоа, ќе ги доделиме влезните вредности на променливите.
+  На крај, ќе ги прикажеме тие променливи на екранот користејќи ја print() функцијата.<br><br>
+  <u>Тоа изгпеда вака:</u><br><br>
+  ime =input("Внеси го твоето име: ")<br>
+  prezime =input("Внеси го твоето презиме: ")<br>
+  volsebnaMokj =input("Внесете ја твојата волшебна моќ: ")<br><br>
+
+  <u>Прикажи ги сите вредности на екранот</u><br><br>
+  print("\n")<br>
+
+  print("Прикажување на деталите за тебе")<br>
+
+  print("Име", "Презиме", "Волшебна моќ")<br>
+
+  print(ime, prezime, volsebnaMokj)
+</div>
+
+<div style="font-size: 20px" class="section" onclick="toggleDropdown('lists')">Стигна до клучот!</div>
+<div id="listsDropdown" class="dropdown-content">
+  <p style="font-size: 20px">Пред тебе има 10 ковчези, но само во една се наоѓа вистинскиот клуч.<br>Со input на број на ковчег од тастатура, зависи output-от и дали си го пронашол вистинскиот.<br>Внимавај, имаш само 4 обиди. </p>
+  <h2>Обид <span id="attempt">1</span></h2>
+  <label for="guess">Внеси го бројот на ковчегот:</label>
+  <input type="number" id="guess">
+  <button id="submitBtn">Внеси</button>
+  <p class="hidden">Клучот е во ковчегот.<br>Сега за да го отвориш ковчегот треба да ја решиш загатката, со тоа што сам ќе ја употребиш print() функцијата.</p>
+  <p class="hidden">За да ја решиш загатката, мораш да го напишеш магичниот збор.<br>Hint:магичниот збор е претставен на позадината!(и во насловот)</p>
+  <input type="text" id="userInput" onkeydown="checkEnterKey(event)" class="hidden">
+  <p id="displayArea" class="hidden"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
